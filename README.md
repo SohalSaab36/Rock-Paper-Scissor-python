@@ -8,7 +8,9 @@
 SohalSaab36/SohalSaab36 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
 --->
+
 <h1>ROCK PAPER SCISSOR</h1>
+<h4>added exit command v 1.2 commit</h4>
 <pre>it is a popular game that i recreated in python 
 Its console based
 </pre>
