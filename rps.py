@@ -11,7 +11,7 @@ def main():
     exit()
   elif player != cpu:
     if player == possible[0]:
-      if cpu === possible[1]:
+      if cpu == possible[1]:
         print("cpu won")
       elif cpu == possible[2]:
         print("player won")
