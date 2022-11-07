@@ -1,8 +1,8 @@
 import random as rd
 possible = ["rock","paper","scissor"]
+cscore = 0
+pscore = 0
 while True:
-  cscore = 0
-  pscore = 0
   player = input("rock paper scissor ; type exit to end = ").lower()
   cpu = rd.choice(possible)
   print(f"cpu = {cpu}")
