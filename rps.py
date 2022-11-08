@@ -1,52 +1,74 @@
 import random as rd
-possible = ["rock","paper","scissor"]
-cscore = 0
-pscore = 0
-while True:
-  player = input("rock paper scissor ; type exit to end = ").lower()
-  cpu = rd.choice(possible)
-  print(f"cpu = {cpu}")
-  print(f"{cscore}cpu {cscore}player")
-  if player == cpu:
-    print("Tie! ; 0 points added")
-  elif player == "exit":
-    break
-  elif player != cpu:
-    if player == possible[0]:
-      if cpu == possible[1]:
-        print("cpu won")
-        cscore = cscore + 1
-        print(f"{cscore}cpu {cscore}player")
-      elif cpu == possible[2]:
-        print("player won")
-        pscore = pscore +1
-        print(f"{cscore}cpu {pscore}player")
-      else:
-        print("Something went wrong")
+p =    ["rock","paper","scissor"]
+cs =    0
+ps =    0
+RUN =    True
+def conf():
+  while True:
+        pl = input("continue (y/n): ")
+        if pl == "y":
+          break
+        else:
+          exit()
+                
+            
 
-    elif player == possible[1]:
-      if cpu ==  possible[0]:
-        print("player won")
-        pscore = pscore + 1
-        print(f"{cscore}cpu {cscore}player")
-      elif cpu == possible[2]:
-        print("cpu won")
-        cscore = cscore +1
-        print(f"{cscore}cpu {pscore}player")
-      else:
-        print("Something went wrong")
-
-    elif player == possible[2]:
-      if cpu == possible[0]:
-        print("cpu won")
-        cscore = cscore +1
-        print(f"{cscore}cpu {pscore}player")
-      elif cpu == possible[1]:
-        print("player won")
-        pscore = pscore +1
-        print(f"{cscore}cpu {pscore}player")
-      else:
-        print("something went wrong")
-
-    else:
-      print("error : try again ")
+while RUN:
+            player =    input(f"{p}: ").lower()
+            cpu =    rd.choice(p)
+            print(f"cpu chose {cpu}")
+            print(f"cpu score {cs}   ; player score {ps}")
+            if player == cpu:
+                print("as usual tied")
+                conf()
+            elif player !=    cpu:
+                if player ==    p[0]:
+                    if cpu ==    p[1]:
+                        print("you lose")
+                        cs =    cs + 1
+                        print(f"cpu score {cs}   ; player score {ps}")
+                        conf()
+                    elif cpu==p[2]:
+                        print("player won")
+                        ps =    ps + 1
+                        print(f"cpu score {cs}   ; player score {ps}")
+                        conf()
+                    else:
+                       print("RESTART")
+                       conf()
+                elif player ==    p[1]:
+                     if cpu ==    p[0]:
+                         print("you won")
+                         ps =    ps+1
+                         print(f"cpu score {cs}   ; player score {ps}")
+                         conf()
+                     elif cpu ==    p[2]:
+                         print("you lose")
+                         cs =    cs+1
+                         print(f"cpu score {cs}   ; player score {ps}")
+                         conf()
+                     else:
+                         print("RESTART")
+                         conf()
+                elif player ==    p[2]:
+                    if cpu ==    p[0]:
+                        print("you lose")
+                        cs =    cs+1
+                        print(f"cpu score {cs}   ; player score {ps}")
+                        conf()
+                    elif cpu ==    p[1]:
+                        print("you won")
+                        ps =    ps+1
+                        print(f"cpu score {cs}   ; player score {ps}")
+                        conf()
+                    else:
+                        print("RESTART")
+                        conf()
+            else:
+                   print("debug")
+                
+                
+                
+            
+            
+            
