@@ -1,15 +1,22 @@
 import random as rd
 p =    ["rock","paper","scissor"]
+
 cs =    0
 ps =    0
 RUN =    True
 def conf():
   while True:
-        pl = input("continue (y/n): ")
+        pl = input("continue (y/n): ").lower()
         if pl == "y":
           break
         else:
-          exit()
+           if pl == "n":
+                exit()
+           else:
+                if pl == "y":
+                    break
+                else:
+                    conf()
                 
             
 
@@ -21,7 +28,7 @@ while RUN:
             if player == cpu:
                 print("as usual tied")
                 conf()
-            elif player !=    cpu:
+            elif player !=    cpu and player in p:
                 if player ==    p[0]:
                     if cpu ==    p[1]:
                         print("you lose")
@@ -63,9 +70,13 @@ while RUN:
                         conf()
                     else:
                         print("RESTART")
-                        conf()
+                        conf()                       
             else:
-                   print("debug")
+                   print("wrong input try again")
+
+                    
+                    
+                    
                 
                 
                 
