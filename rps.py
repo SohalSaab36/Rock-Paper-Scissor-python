@@ -1,6 +1,6 @@
 import random as rd
 p =    ["rock","paper","scissor"]
-
+TS = 0
 cs =    0
 ps =    0
 RUN =    True
@@ -11,20 +11,30 @@ def conf():
           break
         else:
            if pl == "n":
+                if cs ==    ps:
+                    if TS >    0:
+                        print("tied")
+                    else:
+                        print("no scores :)")
+                elif cs >    ps:
+                    print("you lose")
+                elif cs <    ps:
+                    print("player won")
+                else:
+                    print("debug: conf()")
                 exit()
            else:
                 if pl == "y":
                     break
                 else:
                     conf()
-                
-            
-
 while RUN:
+            TS =    cs + ps
             player =    input(f"{p}: ").lower()
             cpu =    rd.choice(p)
             print(f"cpu chose {cpu}")
             print(f"cpu score {cs}   ; player score {ps}")
+            
             if player == cpu:
                 print("as usual tied")
                 conf()
@@ -72,14 +82,5 @@ while RUN:
                         print("RESTART")
                         conf()                       
             else:
-                   print("wrong input try again")
-
-                    
-                    
-                    
-                
-                
-                
-            
-            
-            
+                   print("wrong input restart")
+                   conf()
